@@ -9,7 +9,7 @@ sample app to test nodebb applications
 
 3) npm install 
 
-4) type 'mongo'' in the command shell
+4) type 'mongo' in the command shell
 
 5) type 'use nodebb' (creates nodebb db)
 
@@ -53,12 +53,28 @@ refer: https://media.readthedocs.org/pdf/nodebb/latest/nodebb.pdf
 
 
 
-
-
 #Google Single Sign On Plugin
 
 1) npm install nodebb-plugin-sso-google
 
 2) Create a Google Application via the API Console
+
 3) Locate your Client ID and Secret
-4) Set your "Redirect URI" as the domain you access your NodeBB with /auth/google/callback appended to it (e.g. https://forum.mygreatwebsite.com/auth/google/callback)
+
+4) goto to localhost:4567/admin
+
+5) goto extend -> plugins
+
+6) activate the google sso plugin
+
+7) restart nodebb
+
+8) go back to the admin page
+
+9) goto social authenticaation-> google 
+
+10) paste the client id and secret
+
+restart nodebb
+
+**important for the google signup/login to show up the config.json url must not be localhost but a valid url. the site is still hosted on localhost:4567. (Not sure about this part. Originally when it was localhost I did not get the google login, but after changing to a valid url I started getting the google login, then even though I tried changing back to localhost, the google login was still there)
