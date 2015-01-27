@@ -3,7 +3,7 @@ sample app to test nodebb applications
 
 #Instructions (initial setup that I went through) - sets up to mongodb (not redis)
 
-1) clone git repo git clone -b v0.6.x https://github.com/NodeBB/NodeBB.git nodebb
+1) clone git repo git clone -b v0.6.x https://github.com/NodeBB/NodeBB.git nodebb (skip this step if you are cloning this repo)
 
 2) for (Ubuntu users) install the required programs: sudo apt-get install git nodejs nodejs-legacy npm redis-server imagemagick build-essential
 
@@ -28,11 +28,17 @@ sample app to test nodebb applications
 11) node app --setup
 
 • Change the hostname to your domain name.
+
 • Accept the defaults by pressing enter until it asks you what database you want to use. Type mongo in that field.
+
 • Accept the default port, unless you changed it in the previous steps.
+
 • Change your username to nodebb, unless you set it to another username.
+
 • Enter in the password you made in step 6.
+
 • Change the database to nodebb, unless you named it something else.
+
 
 ** if the node setup fails for some reason run './nodebb dev' - it will try to start nodebb in dev mode, fail and print the error message
 
@@ -44,3 +50,15 @@ sample app to test nodebb applications
 
 
 refer: https://media.readthedocs.org/pdf/nodebb/latest/nodebb.pdf
+
+
+
+
+
+#Google Single Sign On Plugin
+
+1) npm install nodebb-plugin-sso-google
+
+2) Create a Google Application via the API Console
+3) Locate your Client ID and Secret
+4) Set your "Redirect URI" as the domain you access your NodeBB with /auth/google/callback appended to it (e.g. https://forum.mygreatwebsite.com/auth/google/callback)
