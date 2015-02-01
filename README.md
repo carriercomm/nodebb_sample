@@ -78,3 +78,43 @@ refer: https://media.readthedocs.org/pdf/nodebb/latest/nodebb.pdf
 restart nodebb
 
 **important for the google signup/login to show up the config.json url must not be localhost but a valid url. the site is still hosted on localhost:4567. (Not sure about this part. Originally when it was localhost I did not get the google login, but after changing to a valid url I started getting the google login, then even though I tried changing back to localhost, the google login was still there)
+
+refer: https://media.readthedocs.org/pdf/nodebb/latest/nodebb.pdf
+
+#NodeBB config.json
+
+refer: https://docs.nodebb.org/en/latest/configuring/config.html
+
+#NodebBB nginx proxy
+
+follow the tutorial given below
+
+https://docs.nodebb.org/en/latest/configuring/proxies/nginx.html
+
+but instead of using the given server configuration use the below config
+server {
+    listen 80;
+
+    server_name paratmodlocal.com;
+
+    location /forum {
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header Host $http_host;
+        proxy_set_header X-NginX-Proxy true;
+
+        proxy_pass http://127.0.0.1:4567/;
+        proxy_redirect off;
+
+        # Socket.IO Support
+        proxy_http_version 1.1;
+        proxy_set_header Upgrade $http_upgrade;
+        proxy_set_header Connection "upgrade";
+    }
+}
+
+the above configuration is needed becuase so that the url can be redirected to a subdir (http://localhost:4567/forum)
+instead of the root url
+
+to test use the ip address: eg: 192.168.1.5/forum
+
