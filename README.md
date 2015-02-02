@@ -94,7 +94,9 @@ but instead of using the given server configuration use the below config
 <code>
 	server {
 		listen 80;  
-		server_name paratmodlocal.com;  
+		
+		server_name paratmodlocal.com; 
+		
 		location /forum {  
 			proxy_set_header X-Real-IP $remote_addr;  
 			proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;  
