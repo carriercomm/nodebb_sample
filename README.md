@@ -1,7 +1,7 @@
 # nodebb_sample
 sample app to test nodebb applications
 
-##Instructions (initial setup that I went through) - sets up to mongodb (not redis)
+##Instructions: initial setup to mongodb
 
 1) <code>clone git repo git clone -b v0.6.x https://github.com/NodeBB/NodeBB.git</code> nodebb (skip this step if you are cloning this repo)
 
@@ -90,7 +90,8 @@ restart nodebb
 follow the tutorial at: [tutorial](https://docs.nodebb.org/en/latest/configuring/proxies/nginx.html)
 
 but instead of using the given server configuration use the below config
-<code>server {
+<code>
+server {
     listen 80;
 
     server_name paratmodlocal.com;
@@ -109,7 +110,8 @@ but instead of using the given server configuration use the below config
         proxy_set_header Upgrade $http_upgrade;
         proxy_set_header Connection "upgrade";
     }
-}</code>
+}
+</code>
 
 the above configuration is needed becuase so that the url can be redirected to a subdir ([http://localhost:4567/forum](http://localhost:4567/forum))
 instead of the root url
