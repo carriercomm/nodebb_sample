@@ -89,7 +89,8 @@ restart nodebb
 
 follow the tutorial at: [tutorial](https://docs.nodebb.org/en/latest/configuring/proxies/nginx.html)
 
-but instead of using the given server configuration use the below config
+but instead of using the given server configuration use the below config  
+
 <code>
 	server {
 		listen 80;
