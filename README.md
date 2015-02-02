@@ -118,3 +118,15 @@ instead of the root url
 
 to test use the ip address: eg: 192.168.1.5/forum
 
+#Nodebb 3rd party single sign on
+
+1) Set up an oauth2 endpoint on your website
+an examsple has been provided on how here: https://github.com/sajithdil/oauth2orize-example
+
+2) add this plugin to nodebb https://github.com/sajithdil/nodebb-plugin-sso-oauth
+its not on npm so do a "npm intsall git+https://github.com/sajithdil/nodebb-plugin-sso-oauth --save" (this will also save the dependency to package.json)
+
+3) go to library.js of the above set up plugin and do the configuration required.
+
+thats it, now you can do a sso to a 3rd party website of your choice
+
