@@ -92,7 +92,8 @@ follow the tutorial at: [tutorial](https://docs.nodebb.org/en/latest/configuring
 but instead of using the given server configuration use the below config  
 
 <code>
-	server {
+	server {  
+	
 		listen 80;  
 		
 		server_name paratmodlocal.com; 
