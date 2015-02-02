@@ -3,7 +3,7 @@ sample app to test nodebb applications
 
 ##Instructions (initial setup that I went through) - sets up to mongodb (not redis)
 
-1) clone git repo git clone -b v0.6.x https://github.com/NodeBB/NodeBB.git nodebb (skip this step if you are cloning this repo)
+1) <code>clone git repo git clone -b v0.6.x https://github.com/NodeBB/NodeBB.git</code> nodebb (skip this step if you are cloning this repo)
 
 2) for (Ubuntu users) install the required programs: sudo apt-get install git nodejs nodejs-legacy npm redis-server imagemagick build-essential
 
