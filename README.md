@@ -111,6 +111,7 @@ server {
         proxy_set_header Connection "upgrade";
     }
 }
+
 </code>
 
 the above configuration is needed becuase so that the url can be redirected to a subdir ([http://localhost:4567/forum](http://localhost:4567/forum))
@@ -120,11 +121,11 @@ to test use the ip address: eg: [192.168.1.5/forum](192.168.1.5/forum)
 
 ##Nodebb 3rd party single sign on
 
-1) Set up an oauth2 endpoint on your website
-an examsple has been provided at this [repo](https://github.com/sajithdil/oauth2orize-example)
+1) Set up an oauth2 endpoint on your website.  
+An examsple has been provided at this [repo](https://github.com/sajithdil/oauth2orize-example)
 
-2) add this plugin to nodebb [repo](https://github.com/sajithdil/nodebb-plugin-sso-oauth)
-its not on npm so do a "npm intsall git+https://github.com/sajithdil/nodebb-plugin-sso-oauth --save" (this will also save the dependency to package.json)
+2) add this plugin to nodebb [repo](https://github.com/sajithdil/nodebb-plugin-sso-oauth)  
+its not on npm so do a <code>npm intsall git+https://github.com/sajithdil/nodebb-plugin-sso-oauth --save </code>(this will also save the dependency to package.json)
 
 3) go to _library.js_ of the above set up plugin and do the configuration required.
 
